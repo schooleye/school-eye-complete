@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Topics</title>
+  </head>
+  <body>
+    <h1>{{ subject }}</h1>
+    <ul>
+      {% for topic in topics %}
+      <li>
+        <p>{{ topic }}</p>
+        <p>Coverage :{{ topic.coverage }}</p>
+        <a href="{% url 'school_eyes:edit_coverage' topic.id %}">
+          edit coverage</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'school_eyes:add_topic' subject.id %}">Add more Topics</a>
+  </body>
+</html>
+
+<!--
+<form action="." method="post" class="order-form">
+  {{ form.as_p }}
+  <p><input type="submit" value="Place order" /></p>
+  {% csrf_token %}
+</form>
+
+-->

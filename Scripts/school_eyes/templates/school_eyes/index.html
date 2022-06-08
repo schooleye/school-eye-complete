@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>School eye</h1>
+    {% if user.is_authenticated %} {% if user.username == 'moes' %}
+    <p>Welcome, {{ user.username }}</p>
+    <a href="{% url 'school_eyes:moes' %}">Get Started?</a>
+    <a href="{% url 'users:logout' %}">log out</a>
+    {% else %}
+    <p>Welcome, {{ user.username }}</p>
+    <a href="{% url 'school_eyes:school' %}">Get Started?</a>
+    <a href="{% url 'users:logout' %}">log out</a>
+    {%endif%} {% else %}
+    <a href="{% url 'users:register' %}"> Register </a><br />
+    <a href="{% url 'users:login' %}"> Log In </a>
+
+    {% endif %}
+    <a href="{%  url 'school_eyes:coverage' %}">h</a>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subjects</title>
+  </head>
+  <body>
+    <ul>
+      {% for subject in subjects %}
+      <li>
+        <a href="{% url 'school_eyes:subject' subject.id %} ">{{ subject }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
